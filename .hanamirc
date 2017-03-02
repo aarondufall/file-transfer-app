@@ -1,0 +1,4 @@
+project=file_transfer_app
+architecture=container
+test=minitest
+template=erb
