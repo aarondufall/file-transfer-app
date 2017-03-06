@@ -4,6 +4,8 @@ require 'hanami/model'
 require_relative '../lib/file_transfer_app'
 require_relative '../apps/web/application'
 
+require 'fileutils'
+
 Hanami.configure do
   mount Web::Application, at: '/'
 

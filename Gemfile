@@ -5,8 +5,10 @@ gem 'hanami',       '1.0.0.beta1'
 gem 'hanami-model', '~> 1.0.0.beta1'
 
 gem 'pg'
+gem 'file_transfer-client', github: "aarondufall/file-transfer-component"
 
 group :development do
+  gem 'byebug'
   # Code reloading
   # See: http://hanamirb.org/guides/projects/code-reloading
   gem 'shotgun'

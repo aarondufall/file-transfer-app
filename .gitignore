@@ -1,2 +1,5 @@
+/settings
 /public/assets*
 /tmp
+/bundle
+.byebug_history
