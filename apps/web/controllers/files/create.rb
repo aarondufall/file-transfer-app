@@ -7,7 +7,7 @@ module Web::Controllers::Files
 
     def call(params)
       filename = params[:file][:filename]
-      uri = ::File.join(Dir.pwd,"tmp",Date.today.to_s, filename + "-#{SecureRandom.hex}")
+      uri = ::File.join(Dir.pwd,"tmp",Date.today.to_s, ,filename)
       dirname = ::File.dirname(uri)
 
       unless ::File.directory?(dirname)
@@ -15,7 +15,7 @@ module Web::Controllers::Files
       end
 
       ::File.open(uri, 'w') { |file| file.write(params[:file][:tempfile].read) }
-      
+
       FileTransfer::Client::Initiate.(filename, uri)
 
       redirect_to '/'

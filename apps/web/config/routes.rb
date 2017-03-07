@@ -6,3 +6,5 @@
 root to: 'home#index'
 
 post '/files', to: 'files#create'
+get '/files', to: 'files#index'
+get '/files/:id', to: 'files#show'
