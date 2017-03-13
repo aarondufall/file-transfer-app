@@ -18,7 +18,7 @@ module Web::Controllers::Files
       # Create the object to retrieve
       obj = s3.bucket(bucket).object(key)
 
-      uri = ::File.join(Dir.pwd,"tmp","download",Date.today.to_s, + "#{SecureRandom.hex}" ,filename)
+      uri = ::File.join(Dir.pwd,"public", params[:id] ,filename)
       dirname = ::File.dirname(uri)
 
       unless ::File.directory?(dirname)
@@ -27,7 +27,7 @@ module Web::Controllers::Files
 
       obj.get(response_target: uri)
 
-      unsafe_send_file uri
+      send_file ::File.join(Date.today.to_s, params[:id] ,filename)
     end
 
     def db
