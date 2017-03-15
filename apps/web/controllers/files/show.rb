@@ -27,7 +27,7 @@ module Web::Controllers::Files
 
       obj.get(response_target: uri)
 
-      send_file ::File.join(Date.today.to_s, params[:id] ,filename)
+      send_file ::File.join(params[:id] ,filename)
     end
 
     def db
