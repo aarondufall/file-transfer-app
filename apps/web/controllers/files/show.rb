@@ -25,9 +25,7 @@ module Web::Controllers::Files
         FileUtils.mkdir_p(dirname)
       end
 
-      obj.get(response_target: uri)
-
-      send_file ::File.join(params[:id] ,filename)
+      self.body = obj.get.body
     end
 
     def db
