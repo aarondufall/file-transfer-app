@@ -235,7 +235,7 @@ module Web
         img-src 'self' https: data:;
         style-src 'self' 'unsafe-inline' https:;
         font-src 'self';
-        object-src 'none';
+        object-src 'self';
         plugin-types application/pdf;
         child-src 'self';
         frame-src 'self';
