@@ -5,11 +5,11 @@ module Web::Controllers::Files
     expose :files
 
     def call(params)
-      @files = db[:files].to_a
+      @files = db[:remote_files].to_a
     end
 
     def db
-      @db ||= Sequel.postgres('file_transfer', host:'localhost', user: 'event_source')
+      @db ||= Sequel.postgres('read_model', host:'localhost', user: 'event_source')
     end
   end
 end

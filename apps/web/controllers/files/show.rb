@@ -6,7 +6,7 @@ module Web::Controllers::Files
     expose :files
 
     def call(params)
-      file = db[:files].where(file_id: params[:id]).first
+      file = db[:remote_files].where(file_id: params[:id]).first
       key = file[:key]
       bucket = file[:bucket]
       region = file[:region]
@@ -29,7 +29,7 @@ module Web::Controllers::Files
     end
 
     def db
-      @db ||= Sequel.postgres('file_transfer', host:'localhost', user: 'event_source')
+      @db ||= Sequel.postgres('read_model', host:'localhost', user: 'event_source')
     end
   end
 end
