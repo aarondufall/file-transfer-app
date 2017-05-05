@@ -1,12 +1,12 @@
+.env.development
+.env.*
+
 /settings
 /public/assets*
 /tmp
 /bundle
 
 .byebug_history
-!/.env.development
-.env.*
-
 
 notes
 
